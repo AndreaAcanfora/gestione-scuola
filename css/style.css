@@ -24,7 +24,7 @@ button:hover{
 	background-color: #C6F6F6;
 }
 
-div#logaut{
+div#logout{
 	position: absolute;
 	top: 2%;
 	left: 91%;
@@ -110,4 +110,8 @@ button#logout{
 
 div#list{
 	font-size: 20px;
+}
+
+#sect{
+	width: 40%;
 }

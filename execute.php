@@ -7,10 +7,7 @@ $pss =  base64_encode( mcrypt_encrypt( MCRYPT_RIJNDAEL_256,
         $_POST['password'] ,
         MCRYPT_MODE_CBC,
         md5( md5( 'qJB0rGtIn5UB1xG03efyCp' ) ) ) );
-$res = mysqli_query($con, "SELECT * 
-                           FROM `admin` a
-                           WHERE a.user   = '{$_POST['name']}'
-                           AND a.password = '{$pss}'");
+$res = mysqli_query($con, "SELECT * FROM `admin` a  WHERE a.user = '{$_POST['name']}' AND a.password = '{$pss}'");
 $user = mysqli_fetch_assoc($res);
 mysqli_free_result($res);
 mysqli_query($con, "UPDATE `admin` a 
@@ -19,7 +16,7 @@ mysqli_query($con, "UPDATE `admin` a
                     AND a.password = '{$pss}'");
 mysqli_close($con);
 if(!is_null($user))
-    header('Location: /php/esercizio3/home.php');
+    header('Location: home.php');
 include 'head.php';
 ?>
 <body>

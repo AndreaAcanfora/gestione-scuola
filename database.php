@@ -1,7 +1,7 @@
 <?php
 $con = mysqli_connect("localhost", "root", "", "scuola");
 if (mysqli_connect_errno())
-    printf("Connect failed: %s\n", mysqli_connect_error());
+    printf("Connection failed: %s\n", mysqli_connect_error());
 $res = mysqli_query($con, "SELECT a.login 
                            FROM `admin` a
                            WHERE 1");
@@ -9,12 +9,12 @@ $user = mysqli_fetch_assoc($res);
 mysqli_free_result($res);
 mysqli_close($con);
 if($user['login'] != true || $_POST['name'] == ''){
-    header('Location: /php/esercizio3/index.php');
+    header('Location: index.php');
 }
 include 'head.php';
 ?>
 <body>
-	<div id="logaut"><button id="logout" onclick="logaut()">Logout</button></div>
+	<div id="logout"><button id="logout" onclick="logout()">Logout</button></div>
 	<div id="container2">
 		<p>
 		<?php 
@@ -30,21 +30,28 @@ include 'head.php';
 			}else
 				echo 'Questo utente è gia nel database !!!';
 		}else
-			echo "Untente non inserito, non modificare l'html da ispeziona elemento.";
+			echo "C'è stato un errore nell'inserimento";
 		?>
 		</p> 
 	</div>
 </body>
 <?php
 function validate(){
-	if(trim($_POST['name']) == "" || trim($_POST['surname']) == "" || $_POST['class'] == "" || trim($_POST['section']) == "")
+	$result = 1;
+	htmlspecialchars($_POST['name']);
+	htmlspecialchars($_POST['surname']);
+	if (trim($_POST['name']) == "" || trim($_POST['surname']) == "" || $_POST['class'] == "" || trim($_POST['section']) == "")
 		$result = 0;
-	if(is_integer($_POST['class']+1)){
-		if($_POST['class'] < 1 || $_POST['class'] > 5)
+	$section = array('Informatica', 'Chimica', 'Idraulica', 'Edilizia', 'Meccanica', 'Elettronica', 'Elettrotecnica');
+	if (!is_int(array_search($_POST['section'], $section)))
+		$result = 0;
+	if (is_integer($_POST['class'])){
+		if ($_POST['class'] < 1 || $_POST['class'] > 5)
 			$result = 0;
-	}else
-		$result = 0;
-	return !isset($result);
+	} else {
+	  $result = 0;
+	}
+	return $result;
 }
 function isNotInDatabase($con){
 	$res = mysqli_query($con, "SELECT * 
@@ -58,7 +65,7 @@ function isNotInDatabase($con){
 }   
 ?>
 <script>
-function logaut(){
-	window.location.href = '/php/esercizio3/index.php';
+function logout(){
+	window.location.href = 'index.php';
 }
 </script>

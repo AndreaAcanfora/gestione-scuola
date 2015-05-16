@@ -10,11 +10,6 @@ $(document).ready(function() {
 		  required: true,
 		  minlength: 2,
 		  maxlength: 20
-		},
-		section: {
-		  required: true,
-		  minlength: 2,
-		  maxlength: 30
 		}
 	},
 	messages: {
@@ -27,11 +22,6 @@ $(document).ready(function() {
 		  required: " Inserisci il cognome",
 		  minlength: " Devi inserire almeno 2 caratteri",
 		  maxlength: " Non puoi inserire oltre 20 caratteri"
-		},
-		section: {
-		  required: " Inserisci la sezione",
-		  minlength: " Devi inserire almeno 2 caratteri",
-		  maxlength: " Non puoi inserire oltre 30 caratteri"
 		}
 	},
 		submitHandler: function(form) {
