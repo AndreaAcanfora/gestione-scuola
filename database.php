@@ -45,7 +45,7 @@ function validate(){
 	$section = array('Informatica', 'Chimica', 'Idraulica', 'Edilizia', 'Meccanica', 'Elettronica', 'Elettrotecnica');
 	if (!is_int(array_search($_POST['section'], $section)))
 		$result = 0;
-	if (is_integer($_POST['class'])){
+	if (is_integer($_POST['class'] + 1)){
 		if ($_POST['class'] < 1 || $_POST['class'] > 5)
 			$result = 0;
 	} else {

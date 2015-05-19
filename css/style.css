@@ -109,9 +109,37 @@ button#logout{
 }
 
 div#list{
-	font-size: 20px;
+	font-size: 30px;
 }
 
 #sect{
 	width: 40%;
+}
+#sect2{
+	width: 15%;
+	margin-left: 10px;
+}
+#sectClass{
+	width: 5%;
+}
+
+#btnList{
+	font-size: 25px;
+	width: 30px;
+	height: 30px;
+}
+
+#titleHome{
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+#homeButton{
+	width: 80px;
+	height: 30px;
+	margin-left: 10px;
+}
+
+table{
+	margin-top: 20px;
 }
