@@ -17,7 +17,8 @@ if($user['login'] != true){
   <?php include 'head.php';?>
   <body>
     <a href="https://www.facebook.com/isisdavinci?fref=ts" ><i class="icon-facebook"></i></a>
-    <div id="logout"><button id="logout" onclick="logout()">Logout</button></div>
+    <button id="returnHome" onclick="goTo('home.php')"><i class="arrow-left"></i></button>
+    <button id="logout" onclick="goTo('index.php')">Logout</button>
     <form  method="POST" action="database.php" id="container2">
     <div id="container">
     <input type="text" name="name" id="name" placeholder="Name"></tr><br>
@@ -44,8 +45,3 @@ if($user['login'] != true){
     </form>
   </body>
 </html>
-<script>
-function logout(){
-  window.location.href = 'index.php';
-}
-</script>

@@ -16,7 +16,7 @@ if($user['login'] != true){
   <?php include 'head.php';?>
   <body>
       <a href="https://www.facebook.com/isisdavinci?fref=ts" ><i class="icon-facebook"></i></a>
-      <div id="logout"><button id="logout" onclick="goTo('index.php')">Logout</button></div><br><br>
+      <button id="logout" onclick="goTo('index.php')">Logout</button><br><br>
       <div id="container3">
         <center>
           <button onclick="goTo('insert.php')" id="insert">Inserimento Studente</button>
