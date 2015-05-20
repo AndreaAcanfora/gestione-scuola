@@ -1,6 +1,14 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700);
+
 body{
 	margin: 0px;
 	background-color: #F9F9F9;
+	color: #222;
+  	font-size: 16px;
+  	font-weight: 300;
+  	font-family: 'Roboto', sans-serif;
+  	height: 100%;
+  	overflow-x: hidden;
 }
 
 select{

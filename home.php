@@ -20,22 +20,29 @@ if($user['login'] != true){
       <div id="container3">
         <center>
           <button onclick="goTo('insert.php')" id="insert">Inserimento Studente</button>
-          <form method="POST" action="home.php">
+          <form method="POST" name="fList" action="home.php">
           <strong id="titleHome">Lista alunni</strong>
-          <select name="class" id="sectClass">
+          <select name="class" id="sectClass" onchange="document.fList.submit();">
             <?php  
-              for($i = 1; $i<=5;$i++) 
-                echo "<option value='{$i}'>{$i}</option>";
+            for($i = 1; $i<=5;$i++) {
+              echo "<option value='". $i ."' ";
+              if (isset($_POST['class']) && $i ==  $_POST['class'])
+                echo "selected";
+              echo ">{$i}</option>";
+            }
             ?>
           </select>
-          <select name="section" id="sect2">
+          <select name="section" id="sect2" onchange="document.fList.submit();">
           <?php  
             $section = array('Informatica', 'Chimica', 'Idraulica', 'Edilizia', 'Meccanica', 'Elettronica', 'Elettrotecnica');
-            foreach ($section as $key => $value) 
-              echo "<option value='{$value}'>{$value}</option>";
+            foreach ($section as $key => $value){
+              echo "<option value='{$value}'";
+              if (isset($_POST['section']) && $value ==  $_POST['section'])
+                echo "selected";
+              echo ">{$value}</option>";
+            }
           ?>
           </select>
-          <button type="submit" id="homeButton">Conferma</button>
           </form>
           <div id="list">
             <?php include 'list.php';?>
