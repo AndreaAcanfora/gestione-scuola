@@ -23,7 +23,7 @@ if($user['login'] != true){
       <input type="text" name="surname" id="surname" placeholder="Surname"><br>
       <center>
         class: 
-        <select name="class">
+        <select name="class" id="sectClass">
           <?php  
             for($i = 1; $i<=5;$i++) 
               echo "<option value='{$i}'>{$i}</option>";
@@ -38,7 +38,7 @@ if($user['login'] != true){
           ?>
         </select>
       </center>
-      <button id="link" type="submit">INSERT</a>
+      <button id="link" type="submit">INSERT</button>
       <div>
       </form>
   </body>

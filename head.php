@@ -6,4 +6,5 @@
 	<script type="text/javascript" src="js/validate.js"></script>
 	<script type="text/javascript" src="js/manage.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/media-query.css">
 </head>
