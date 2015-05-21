@@ -39,7 +39,3 @@
 	}
 	?>
 </table>
-<script type="text/javascript">
-	f
-	#sectClass
-</script>

@@ -14,7 +14,9 @@ if($user['login'] != true || $_POST['name'] == ''){
 include 'head.php';
 ?>
 <body>
-	<div id="logout"><button id="logout" onclick="logout()">Logout</button></div>
+	<a href="https://www.facebook.com/isisdavinci?fref=ts" ><i class="icon-facebook"></i></a>
+    <button id="returnHome" onclick="goTo('home.php')"><i class="arrow-left"></i></button>
+	<div id="logout"><button id="logout" onclick="goTo('index.php')">Logout</button></div>
 	<div id="container2">
 		<p>
 		<?php 
@@ -64,8 +66,3 @@ function isNotInDatabase($con){
 	return  is_null($user);
 }   
 ?>
-<script>
-function logout(){
-	window.location.href = 'index.php';
-}
-</script>
