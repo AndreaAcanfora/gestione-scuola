@@ -19,19 +19,20 @@
 			echo "<br>Non ci sono alunni in questa classe";
 		}else{
 			mysqli_data_seek($res,0);
-			echo '<tr><td align="center"> Immagine  </td>
-						<td align="center">     Nome </td>
-						<td align="center">			Classe </td>
-						<td align="center">			Sezione</td>
-						<td align="right">      Elimina </td></tr>';
+			echo '<tr><td align="center">       Immagine  	</td>
+						<td align="center">     Nome 		</td>
+						<td align="center">		Classe      </td>
+						<td align="center">		Sezione     </td>
+						<td align="center">     Modifica    </td>
+						<td align="right">      Elimina     </td></tr>';
 			while ($user = mysqli_fetch_assoc($res)) {
-				$id_studente = $user['id_studente'];
 				echo '<tr><td>
 							<img src="img/avatar.png" width="100px" height="100px"> </td><td>' . 
 							$user['nome'] . ' ' . $user['cognome'] . '</td><td align="center"> ' .
 							$user['classe'] . '</td><td>' .
 							$user['sezione'] . "</td><td align='center'>
-							<button id='btnList' onclick=\"deleteStud({$id_studente})\"> X </button>". '</td></tr>';
+							<button id='btnList' onclick=\"modifStud({$user['id_studente']},'{$user['nome']}','{$user['cognome']}','{$user['classe']}','{$user['sezione']}')\"> !! </button> </td><td align='center'>
+							<button id='btnList' onclick=\"deleteStud({$user['id_studente']})\"> X </button> </td></tr>";
 			};
 		}	
 		mysqli_free_result($res);

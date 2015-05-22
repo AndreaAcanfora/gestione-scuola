@@ -26,10 +26,11 @@ include 'function.php';
 			if (mysqli_connect_errno())
 			    printf("Connect failed: %s\n", mysqli_connect_error());
 			else if(isNotInDatabase($con)){
-				mysqli_query($con, "INSERT INTO `studenti`(`Nome`, `Cognome`, `Classe`, `Sezione`) 
-									VALUES ('{$_POST['name']}','{$_POST['surname']}','{$_POST['class']}','{$_POST['section']}')");
+				mysqli_query($con, "UPDATE studenti 
+									SET Nome = '{$_POST['name']}', Cognome = '{$_POST['surname']}', Classe = '{$_POST['class']}', Sezione = '{$_POST['section']}'
+									WHERE id_studente = {$_GET['id']}");
 				mysqli_close($con);
-				echo 'Utente ' . $_POST['name'] . ' ' . $_POST['surname'] . ' inserito con successo';
+				echo 'Utente ' . $_POST['name'] . ' ' . $_POST['surname'] . ' modificato con successo';
 			}else
 				echo 'Questo utente è gia nel database !!!';
 		}else
@@ -38,4 +39,3 @@ include 'function.php';
 		</p> 
 	</div>
 </body>
-

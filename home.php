@@ -44,9 +44,7 @@ if($user['login'] != true){
           ?>
           </select>
           </form>
-          <div id="list">
-            <?php include 'list.php';?>
-          </div>
+          <?php include 'list.php';?>
         </center>
       </div>
   </body>
