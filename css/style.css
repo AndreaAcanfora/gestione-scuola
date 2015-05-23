@@ -109,19 +109,6 @@ label.error {
 	font-size:20px;
 }
 
-form.login{
-	margin-top: 5%;
-	margin-left: 10%;
-	border-radius: 2px;
-	border: 2px solid black;
-	background-color: #BBDEFB;
-	padding-bottom: 8%;
-	padding-top: 8%;
-	width: 80%;
-	font-size: 20px;
-	height: 80%;
-}
-
 button#insert{
 	width: 50%;
 	height: 40px;
@@ -200,7 +187,7 @@ div#list{
   font-size: 150%;
   content: "\e091";
 }
-/* -------- */
+/* ---- EDIT---- */
 #edit input{
 	height: 25px;
 	width: 120px;
@@ -215,4 +202,44 @@ div#list{
 
 #file2{
 	margin-top: 10px;
+}
+/* ---- INDEX---- */
+body#backgroundIndex{
+	background-image: url("http://localhost/php/gestione-scuola/img/scuola.jpg");
+}
+form.login{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 50px;
+	display: inline;
+	border-bottom: 2px solid black;
+	background-color: #F1F1F1;
+	font-size: 20px;
+}
+
+form.login #indexLogin, #bntLogin{
+	margin-top: 10px;
+	height: 25px;
+	width: 25% !important;
+	margin-left: 5%;
+}
+#bntLogin{
+	height: 31px;
+}
+#containerText{
+	color: #F9F9F9;
+	font-size: 30px;
+	width: 30%;
+	border-radius: 30px;
+	background-color: rgba(0,0,0,0.5);
+	position: absolute;
+	top: 80px;
+	right: 50px;
+	width: 30%;
+}
+.login .icon-facebook{ 
+	position: absolute;
+	right: 30px;
+	top: 10px;
 }
