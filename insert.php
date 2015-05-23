@@ -1,16 +1,7 @@
 <?php
-$con = mysqli_connect("localhost", "root", "", "scuola");
-if (mysqli_connect_errno())
-    printf("Connect failed: %s\n", mysqli_connect_error());
-$res = mysqli_query($con, "SELECT a.login 
-                           FROM `admin` a
-                           WHERE 1");
-$user = mysqli_fetch_assoc($res);
-mysqli_free_result($res);
-mysqli_close($con);
-if($user['login'] != true){
-    header('Location: index.php');
-}
+session_start();
+if (!$_SESSION['nome']) 
+  header('Location: index.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +10,7 @@ if($user['login'] != true){
     <a href="https://www.facebook.com/isisdavinci?fref=ts" ><i class="icon-facebook"></i></a>
     <button id="returnHome" onclick="goTo('home.php')">&xlarr;</button>
     <button id="logout" onclick="goTo('index.php')">Logout</button>
-    <form  method="POST" action="database.php" id="container2">
+    <form  method="POST" action="database.php" id="container2" enctype="multipart/form-data">
     <div id="container">
     <input type="text" name="name" id="name" placeholder="Name"><br>
     <input type="text" name="surname" id="surname" placeholder="Surname"><br>
@@ -39,6 +30,10 @@ if($user['login'] != true){
             echo "<option value='{$value}'>{$value}</option>";
         ?>
       </select>
+      <div id="file2">
+        <strong id="testo">Select your image:</strong>
+        <input type="file" name="fileToUpload" id="fileToUpload">
+      </div>
     </center>
     <button id="link" type="submit">INSERT</button>
     </form>

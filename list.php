@@ -11,7 +11,7 @@
 			$class = $_POST['class'];
 			$section = $_POST['section'];
 		}
-		$res = mysqli_query($con, "SELECT id_studente , nome, cognome, classe, sezione 
+		$res = mysqli_query($con, "SELECT id_studente , nome, cognome, classe, sezione, image 
 									   						 FROM `studenti`
 									   						 WHERE studenti.classe = {$class}
 									   						 AND studenti.sezione = '{$section}'");
@@ -26,12 +26,13 @@
 						<td align="center">     Modifica    </td>
 						<td align="right">      Elimina     </td></tr>';
 			while ($user = mysqli_fetch_assoc($res)) {
+				$user['image'] = $user['image'] != '' ? $user['image']: 'avatar.png';
 				echo '<tr><td>
-							<img src="img/avatar.png" width="100px" height="100px"> </td><td>' . 
+							<img src="img/' .$user['image'] . '" width="100px" height="100px"> </td><td>' . 
 							$user['nome'] . ' ' . $user['cognome'] . '</td><td align="center"> ' .
 							$user['classe'] . '</td><td>' .
 							$user['sezione'] . "</td><td align='center'>
-							<button id='btnList' onclick=\"modifStud({$user['id_studente']},'{$user['nome']}','{$user['cognome']}','{$user['classe']}','{$user['sezione']}')\"> !! </button> </td><td align='center'>
+							<button id='btnList' onclick=\"modifStud({$user['id_studente']},'{$user['nome']}','{$user['cognome']}','{$user['classe']}','{$user['sezione']}','{$user['image']}')\"> !! </button> </td><td align='center'>
 							<button id='btnList' onclick=\"deleteStud({$user['id_studente']})\"> X </button> </td></tr>";
 			};
 		}	

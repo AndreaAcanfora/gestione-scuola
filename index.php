@@ -1,11 +1,6 @@
 <?php
-$con = mysqli_connect("localhost", "root", "", "scuola");
-  if (mysqli_connect_errno())
-    printf("Connect failed: %s\n", mysqli_connect_error());
-  mysqli_query($con, "UPDATE `admin` a 
-                      SET a.login = 0 
-                      WHERE 1");
-  mysqli_close($con);
+session_start();
+$_SESSION['nome'] = '';
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,3 +16,4 @@ $con = mysqli_connect("localhost", "root", "", "scuola");
       </form>
   </body>
 </html>
+

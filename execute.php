@@ -10,13 +10,12 @@ $pss =  base64_encode( mcrypt_encrypt( MCRYPT_RIJNDAEL_256,
 $res = mysqli_query($con, "SELECT * FROM `admin` a  WHERE a.user = '{$_POST['name']}' AND a.password = '{$pss}'");
 $user = mysqli_fetch_assoc($res);
 mysqli_free_result($res);
-mysqli_query($con, "UPDATE `admin` a 
-                    SET a.login    = 1 
-                    WHERE a.user   = '{$_POST['name']}'
-                    AND a.password = '{$pss}'");
 mysqli_close($con);
-if(!is_null($user))
+if(!is_null($user)){
+    session_start();
+    $_SESSION['nome'] = $_POST['name'];
     header('Location: home.php');
+}
 include 'head.php';
 ?>
 <body>

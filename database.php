@@ -1,16 +1,7 @@
 <?php
-$con = mysqli_connect("localhost", "root", "", "scuola");
-if (mysqli_connect_errno())
-    printf("Connection failed: %s\n", mysqli_connect_error());
-$res = mysqli_query($con, "SELECT a.login 
-                           FROM `admin` a
-                           WHERE 1");
-$user = mysqli_fetch_assoc($res);
-mysqli_free_result($res);
-mysqli_close($con);
-if($user['login'] != true || $_POST['name'] == ''){
-    header('Location: index.php');
-}
+session_start();
+if (!$_SESSION['nome']) 
+  header('Location: index.php');
 include 'head.php';
 include 'function.php';
 ?>
@@ -26,8 +17,9 @@ include 'function.php';
 			if (mysqli_connect_errno())
 			    printf("Connect failed: %s\n", mysqli_connect_error());
 			else if(isNotInDatabase($con)){
-				mysqli_query($con, "INSERT INTO `studenti`(`Nome`, `Cognome`, `Classe`, `Sezione`) 
-									VALUES ('{$_POST['name']}','{$_POST['surname']}','{$_POST['class']}','{$_POST['section']}')");
+				include 'uploadImage.php';
+				mysqli_query($con, "INSERT INTO `studenti`(`Nome`, `Cognome`, `Classe`, `Sezione`, `image`) 
+									VALUES ('{$_POST['name']}','{$_POST['surname']}','{$_POST['class']}','{$_POST['section']}','{$_FILES['fileToUpload']['name']}')");
 				mysqli_close($con);
 				echo 'Utente ' . $_POST['name'] . ' ' . $_POST['surname'] . ' inserito con successo';
 			}else
