@@ -21,6 +21,7 @@ $_SESSION['nome'] = '';
       accedi all'area riservata.
     </p>
     </div>
+    <a href="chiSiamo.html" id="chiSiamo">Chi siamo? </a>
   </body>
 </html>
 

@@ -243,3 +243,56 @@ form.login #indexLogin, #bntLogin{
 	right: 30px;
 	top: 10px;
 }
+
+
+/*       CHI SIAMO          */
+#chiSiamo{
+	position: absolute;
+	bottom: 50px;
+	right: 50px;
+	font-size: 40px;
+	color: black;
+	text-decoration: none;
+}
+#chiSiamo:hover{
+	font-size: 50px ;
+	color: rgba(0,0,0,0.7);
+}
+
+#bgChiSiamo{
+	background-image: url("http://localhost/php/gestione-scuola/img/sfondo.jpg");
+	background-size: cover;
+	background-color: black;
+}
+
+img#imgChiSiamo{
+	float: left;
+	border-radius: 150px;
+}
+
+img#imgChiSiamo2{
+	float: right;
+	border-radius: 150px;
+}
+
+
+.containerImg{
+	border: 2px solid white;
+	height: 300px;
+	margin-top: 100px;
+	margin-left: 40px;
+	margin-right: 40px;
+	border-radius: 150px;
+	background-color: rgba(255,255,255,0.5);
+}
+
+i#descr{
+	display: inline;
+	font-size: 30px;
+	color: black;
+}
+
+.containerText2{
+	width: 90%;
+	margin-left: 5%;
+}
