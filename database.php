@@ -17,7 +17,8 @@ include 'function.php';
 			if (mysqli_connect_errno())
 			    printf("Connect failed: %s\n", mysqli_connect_error());
 			else if(isNotInDatabase($con)){
-				include 'uploadImage.php';
+				if($_FILES['fileToUpload']['name'])
+					include 'uploadImage.php';
 				mysqli_query($con, "INSERT INTO `studenti`(`Nome`, `Cognome`, `Classe`, `Sezione`, `image`) 
 									VALUES ('{$_POST['name']}','{$_POST['surname']}','{$_POST['class']}','{$_POST['section']}','{$_FILES['fileToUpload']['name']}')");
 				mysqli_close($con);

@@ -23,6 +23,18 @@
    #sect2{
     width: 100px;
   }
+  .login #fb{
+    display: none !important;
+  }
+  #backgroundIndex div#containerText{ 
+    width: 100% !important;
+    border-radius: 0px !important;
+    font-size: 18px !important;
+    left: 0px !important;
+  }
+  #backgroundIndex{
+    background-position: -250px 0px !important;
+  }
 }
 @media (max-width: 500px) {
 	#container3{

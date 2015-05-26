@@ -10,6 +10,21 @@ $(document).ready(function() {
 		  required: true,
 		  minlength: 2,
 		  maxlength: 20
+		},
+		id: {
+		  required: true,
+		  minlength: 2,
+		  maxlength: 20
+		},
+		pss: {
+		  required: true,
+		  minlength: 2,
+		  maxlength: 20
+		},
+		pss2: {
+		  required: true,
+		  minlength: 2,
+		  maxlength: 20
 		}
 	},
 	messages: {
@@ -20,6 +35,21 @@ $(document).ready(function() {
 		},
 		surname: {
 		  required: " Inserisci il cognome",
+		  minlength: " Devi inserire almeno 2 caratteri",
+		  maxlength: " Non puoi inserire oltre 20 caratteri"
+		},
+		id: {
+		  required: " Inserisci il nome",
+		  minlength: " Devi inserire almeno 2 caratteri",
+		  maxlength: " Non puoi inserire oltre 20 caratteri"
+		},
+		pss: {
+		  required: " Inserisci la password",
+		  minlength: " Devi inserire almeno 2 caratteri",
+		  maxlength: " Non puoi inserire oltre 20 caratteri"
+		},
+		pss2: {
+		  required: " Reinserisci la password",
 		  minlength: " Devi inserire almeno 2 caratteri",
 		  maxlength: " Non puoi inserire oltre 20 caratteri"
 		}

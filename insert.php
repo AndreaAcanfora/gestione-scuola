@@ -11,31 +11,32 @@ if (!$_SESSION['nome'])
     <button id="returnHome" onclick="goTo('home.php')">&xlarr;</button>
     <button id="logout" onclick="goTo('index.php')">Logout</button>
     <form  method="POST" action="database.php" id="container2" enctype="multipart/form-data">
-    <div id="container">
-    <input type="text" name="name" id="name" placeholder="Name"><br>
-    <input type="text" name="surname" id="surname" placeholder="Surname"><br>
-    <center>
-      class: 
-      <select name="class" id="sectClass">
-        <?php  
-          for($i = 1; $i<=5;$i++) 
-            echo "<option value='{$i}'>{$i}</option>";
-        ?>
-      </select>
-      Sezione: 
-      <select name="section" id="sect">
-        <?php  
-          $section = array('Informatica', 'Chimica', 'Idraulica', 'Edilizia', 'Meccanica', 'Elettronica', 'Elettrotecnica');
-          foreach ($section as $key => $value) 
-            echo "<option value='{$value}'>{$value}</option>";
-        ?>
-      </select>
-      <div id="file2">
-        <strong id="testo">Select your image:</strong>
-        <input type="file" name="fileToUpload" id="fileToUpload">
+      <div id="container">
+        <input type="text" name="name" id="name" placeholder="Name"><br>
+        <input type="text" name="surname" id="surname" placeholder="Surname"><br>
+        <center>
+          class: 
+          <select name="class" id="sectClass">
+            <?php  
+              for($i = 1; $i<=5;$i++) 
+                echo "<option value='{$i}'>{$i}</option>";
+            ?>
+          </select>
+          Sezione: 
+          <select name="section" id="sect">
+            <?php  
+              $section = array('Informatica', 'Chimica', 'Idraulica', 'Edilizia', 'Meccanica', 'Elettronica', 'Elettrotecnica');
+              foreach ($section as $key => $value) 
+                echo "<option value='{$value}'>{$value}</option>";
+            ?>
+          </select>
+          <div id="file2">
+            <strong id="testo">Select your image:</strong>
+            <input type="file" name="fileToUpload" id="fileToUpload">
+          </div>
+        </center>
+        <button id="link" type="submit">INSERT</button>
       </div>
-    </center>
-    <button id="link" type="submit">INSERT</button>
     </form>
   </body>
 </html>
