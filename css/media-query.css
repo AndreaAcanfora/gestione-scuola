@@ -18,7 +18,7 @@
   	margin-left: 5% !important;
   }
   #container3{
-		margin-top: 30px !important;
+		margin-top: 80px !important;
    }
    #sect2{
     width: 100px;
@@ -27,6 +27,7 @@
     display: none !important;
   }
   #backgroundIndex div#containerText{ 
+    top: 100px !important;
     width: 100% !important;
     border-radius: 0px !important;
     font-size: 18px !important;
@@ -35,9 +36,12 @@
   #backgroundIndex{
     background-position: -250px 0px !important;
   }
+  #titleIns{
+    margin-left: 5%;
+  }
 }
 @media (max-width: 500px) {
-	#container3{
+	#container3,#container2{
 		width: 99% !important;
 		margin-left: 0px !important;
 	}

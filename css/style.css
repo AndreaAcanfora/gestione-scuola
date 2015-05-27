@@ -76,20 +76,24 @@ button:hover{
 	margin-left: 10%;
 	border-radius: 2px;
 	border: 2px solid black;
-	background-color: #BBDEFB;
+	background-color: rgba(3,3,3,0.7);
+	border-radius: 20px;
 	padding-bottom: 8%;
 	padding-top: 8%;
 	width: 80%;
+	color: white;
 }
 
 #container3{
-	margin-top: 5%;
+	margin-top: 80px;
 	margin-left: 10%;
 	border-radius: 2px;
 	border: 2px solid black;
-	background-color: #BBDEFB;
+	background-color: rgba(3,3,3,0.7);
+	border-radius: 20px;
 	padding-bottom: 1%;
 	width: 80%;
+	color: white;
 }
 
 form#container2{
@@ -236,7 +240,7 @@ form.login #indexLogin, #bntLogin{
 	position: absolute;
 	top: 80px;
 	right: 50px;
-	width: 30%;
+	width: 35%;
 }
 .login .icon-facebook{ 
 	position: absolute;
@@ -296,3 +300,16 @@ i#descr{
 	width: 90%;
 	margin-left: 5%;
 }
+
+/* --- home, insert, modifica -----*/
+#bgHome, #bgMod, #bgIns, #bgDB, #bgEdit{
+	background-image: url("http://localhost/php/gestione-scuola/img/libri.jpg");
+	background-size: cover;
+	background-color: black;
+}
+
+#fb-white{
+	color: white;
+}
+/* --- insert -----*/
+

@@ -14,10 +14,10 @@ $_SESSION['nome'] = '';
     </form>
     <div id="containerText">
     <p>
-      Benvenuto nella sezione amministrativa<br>
-      dell'ISIS Leonardo Da Vinci<br>
-      Da qui potrai gestire comodamente<br>
-      gli alunni della scuola;<br>
+      Benvenuto nella sezione amministrativa
+      dell'ISIS Leonardo Da Vinci
+      Da qui potrai gestire comodamente
+      gli alunni della scuola;
       accedi all'area riservata.
     </p>
     </div>

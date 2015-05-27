@@ -6,8 +6,8 @@ if (!$_SESSION['nome'])
 <!DOCTYPE html>
 <html>
   <?php include 'head.php';?>
-  <body>
-      <a href="https://www.facebook.com/isisdavinci?fref=ts" ><i class="icon-facebook"></i></a>
+  <body id="bgHome">
+      <a href="https://www.facebook.com/isisdavinci?fref=ts" id="fb-white"><i class="icon-facebook"></i></a>
       <button id="logout" onclick="goTo('index.php')">Logout</button><br><br>
       <div id="container3">
         <center>

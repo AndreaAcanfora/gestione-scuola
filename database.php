@@ -5,8 +5,8 @@ if (!$_SESSION['nome'])
 include 'head.php';
 include 'function.php';
 ?>
-<body>
-	<a href="https://www.facebook.com/isisdavinci?fref=ts" ><i class="icon-facebook"></i></a>
+<body id="bgDB">
+	<a href="https://www.facebook.com/isisdavinci?fref=ts" id="fb-white"><i class="icon-facebook"></i></a>
     <button id="returnHome" onclick="goTo('home.php')">&xlarr;</button>
 	<div id="logout"><button id="logout" onclick="goTo('index.php')">Logout</button></div>
 	<div id="container2">

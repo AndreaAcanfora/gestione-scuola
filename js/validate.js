@@ -74,14 +74,14 @@ $(document).ready(function() {
 	},
 	messages: {
 		name: {
-		  required: " Inserisci il nome",
-		  minlength: " Devi inserire almeno 2 caratteri",
-		  maxlength: " Non puoi inserire oltre 20 caratteri"
+		  required:  " <div style='position:absolute; left: 50px; top:80px;'>Inserisci il nome</div>",
+		  minlength: " <div style='position:absolute; left: 50px; top:80px;'>Devi inserire almeno 2 caratteri</div>",
+		  maxlength: " <div style='position:absolute; left: 50px; top:80px;'>Non puoi inserire oltre 20 caratteri</div>"
 		},
 		password: {
-		  required: " Inserisci la password",
-		  minlength: " Devi inserire almeno 2 caratteri",
-		  maxlength: " Non puoi inserire oltre 20 caratteri"
+		  required:  " <div style='position:absolute; left: 50px; top:80px;'>Inserisci la password</div>",
+		  minlength: " <div style='position:absolute; left: 50px; top:80px;'>Devi inserire almeno 2 caratteri</div>",
+		  maxlength: " <div style='position:absolute; left: 50px; top:80px;'>Non puoi inserire oltre 20 caratteri</div>"
 		}
 	},
 		submitHandler: function(form) {

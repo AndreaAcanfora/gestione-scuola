@@ -6,8 +6,8 @@ if (!$_SESSION['nome'])
 <!DOCTYPE html>
 <html>
   <?php include 'head.php';?>
-  <body>
-    <a href="https://www.facebook.com/isisdavinci?fref=ts" ><i class="icon-facebook"></i></a>
+  <body id="bgMod">
+    <a href="https://www.facebook.com/isisdavinci?fref=ts" id="fb-white"><i class="icon-facebook"></i></a>
     <button id="returnHome" onclick="goTo('home.php')">&xlarr;</button>
     <button id="logout" onclick="goTo('index.php')">Logout</button>
     <form  method="POST" action=<?php echo "'edit.php?id=" . $_GET['id'] . "'";?> id="container3" enctype="multipart/form-data">

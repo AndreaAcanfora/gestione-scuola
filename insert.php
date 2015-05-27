@@ -6,12 +6,13 @@ if (!$_SESSION['nome'])
 <!DOCTYPE html>
 <html>
   <?php include 'head.php';?>
-  <body>
-    <a href="https://www.facebook.com/isisdavinci?fref=ts" ><i class="icon-facebook"></i></a>
+  <body id="bgIns">
+    <a href="https://www.facebook.com/isisdavinci?fref=ts" id="fb-white"><i class="icon-facebook"></i></a>
     <button id="returnHome" onclick="goTo('home.php')">&xlarr;</button>
     <button id="logout" onclick="goTo('index.php')">Logout</button>
     <form  method="POST" action="database.php" id="container2" enctype="multipart/form-data">
       <div id="container">
+        <div id="titleIns">INSERIMENTO</div>
         <input type="text" name="name" id="name" placeholder="Name"><br>
         <input type="text" name="surname" id="surname" placeholder="Surname"><br>
         <center>
@@ -31,7 +32,7 @@ if (!$_SESSION['nome'])
             ?>
           </select>
           <div id="file2">
-            <strong id="testo">Select your image:</strong>
+            <div id="testo">Select your image:</div>
             <input type="file" name="fileToUpload" id="fileToUpload">
           </div>
         </center>
