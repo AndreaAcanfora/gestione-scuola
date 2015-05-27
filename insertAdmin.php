@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <?php include 'head.php';?>
-  <body>
+  <body id="bgHome">
     <button id="returnHome" onclick="goTo('index.php')">&xlarr;</button>
     <form  method="POST" action="exeInsertAdmin.php" id="container2" class="insA">
         <div id="container">
