@@ -3,7 +3,7 @@ if (!$_POST['name'])
   header('Location: index.php');
 include 'head.php';
 ?>
-<body>
+<body id="bgHome">
     <button id="returnHome" onclick="goTo('index.php')">&xlarr;</button>
 	<div id="container2">
 		<p>
