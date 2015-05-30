@@ -89,7 +89,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$('form#container2').validate({
+	$('form#container3').validate({
 	rules: {
 		name: {
 		  required: true,
