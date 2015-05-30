@@ -8,7 +8,7 @@
             INSERT ADMIN
             <input type="text" name="name" id="name" placeholder="Name"><br>
             <input type="text" name="surname" id="surname" placeholder="Surname"><br>
-            <input type="text" name="id" id="id" placeholder="ID"><br>
+            <input type="text" name="id" id="id" placeholder="Username"><br>
             <input type="password" name="pss" id="pss" placeholder="Password"><br>
             <input type="password" name="pss2" id="pss2" placeholder="Repete Password"><br>
             <input type="text" name="key" id="key" placeholder="secure key"><br>

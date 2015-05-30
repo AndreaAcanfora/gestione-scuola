@@ -1,44 +1,97 @@
 <?php
-$target_dir = "img/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-// Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
-    } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
+class upload 
+{
+  private $target_dir;
+  private $target_file;
+  protected $uploadOk;
+  function __construct($dir)
+  {
+      $this->target_dir = $dir;
+      $this->target_file = $this->target_dir . basename($_FILES["fileToUpload"]["name"]);
+      $this->uploadOk = 1;
+  }
+
+  public function isImage(){
+    if(isset($_POST["submit"])) {
+      $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+      if($check !== false) {
+          echo "File is an image - " . $check["mime"] . ".<br>";
+          $this->uploadOk = 1;
+      } else {
+          echo "File is not an image.<br>";
+          $this->uploadOk = 0;
+      }
     }
-}
-// Check if file already exists
-if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
-}
-// Check file size
-if ($_FILES["fileToUpload"]["size"] > 500000) {
-    echo "Sorry, your file is too large.";
-    $uploadOk = 0;
-}
-// Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
-    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-    $uploadOk = 0;
-}
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
-} else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-    } else {
-        echo "Sorry, there was an error uploading your file.";
+    return $this->uploadOk;
+  }
+
+  public function exist(){
+    if (file_exists($this->target_file)) {
+      echo "Sorry, file already exists.<br>";
+      $this->uploadOk = 0;
     }
+    return $this->uploadOk;
+  }
+
+  public function sizeFile(){
+    if ($_FILES["fileToUpload"]["size"] > 500000) {
+      echo "Sorry, your file is too large.<br>";
+      $this->uploadOk = 0;
+    }
+    return $this->uploadOk;
+  }
+
+  protected function getTargetFile(){
+    return $this->target_file;
+  }
+}
+
+class uploadImage extends upload
+{
+  private $imageFileType;
+
+  function __construct($dir)
+  {
+    parent::__construct($dir);
+    $this->imageFileType = pathinfo($this->getTargetFile(),PATHINFO_EXTENSION);
+  }
+
+  public function isImage(){
+    if($this->imageFileType != "jpg" && $this->imageFileType != "png" && $this->imageFileType != "jpeg"
+    && $this->imageFileType != "gif" ) {
+      echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.<br>";
+      $this->uploadOk = 0;
+    }
+    return $this->uploadOk;
+  } 
+
+  public function correctImage(){
+    parent::isImage();
+    parent::exist();
+    parent::sizeFile();
+    return $this->uploadOk;
+  } 
+
+  public function uploadImg($con,$type){
+    if (!$this->uploadOk) {
+      echo "Sorry, your file was not uploaded.<br>";
+    } else {  
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $this->getTargetFile())) {
+            echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.<br>";
+            if($type){
+                mysqli_query($con, "INSERT INTO `studenti`(`Nome`, `Cognome`, `Classe`, `Sezione`, `image`) 
+                                        VALUES ('{$_POST['name']}','{$_POST['surname']}','{$_POST['class']}','{$_POST['section']}','{$_FILES['fileToUpload']['name']}')");
+                echo 'Studente ' . $_POST['name'] . ' ' . $_POST['surname'] . ' inserito con successo';
+            }else{
+                mysqli_query($con, "UPDATE studenti 
+                                    SET Nome = '{$_POST['name']}', Cognome = '{$_POST['surname']}', Classe = '{$_POST['class']}', Sezione = '{$_POST['section']}', image = '{$_FILES['fileToUpload']['name']}'
+                                    WHERE id_studente = {$_GET['id']}");
+                echo 'Studente ' . $_POST['name'] . ' ' . $_POST['surname'] . ' modificato con successo';
+            }
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
+  }
 }
 ?>

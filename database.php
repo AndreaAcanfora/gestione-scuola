@@ -17,12 +17,18 @@ include 'function.php';
 			if (mysqli_connect_errno())
 			    printf("Connect failed: %s\n", mysqli_connect_error());
 			else if(isNotInDatabase($con)){
-				if($_FILES['fileToUpload']['name'])
+				if($_FILES['fileToUpload']['name']){
+					$type = 1;
 					include 'uploadImage.php';
-				mysqli_query($con, "INSERT INTO `studenti`(`Nome`, `Cognome`, `Classe`, `Sezione`, `image`) 
-									VALUES ('{$_POST['name']}','{$_POST['surname']}','{$_POST['class']}','{$_POST['section']}','{$_FILES['fileToUpload']['name']}')");
+					$img = new uploadImage('img/');
+					if($img->isImage() && $img->correctImage())
+						$img->uploadImg($con,$type);
+				}else{
+					mysqli_query($con, "INSERT INTO `studenti`(`Nome`, `Cognome`, `Classe`, `Sezione`, `image`) 
+                                    	VALUES ('{$_POST['name']}','{$_POST['surname']}','{$_POST['class']}','{$_POST['section']}','{$_FILES['fileToUpload']['name']}')");
+					echo 'Utente ' . $_POST['name'] . ' ' . $_POST['surname'] . ' inserito con successo';
+				}
 				mysqli_close($con);
-				echo 'Utente ' . $_POST['name'] . ' ' . $_POST['surname'] . ' inserito con successo';
 			}else
 				echo 'Questo utente è gia nel database !!!';
 		}else

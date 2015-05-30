@@ -88,4 +88,34 @@ $(document).ready(function() {
 			form.submit();
 		}
 	});
+
+	$('form#container2').validate({
+	rules: {
+		name: {
+		  required: true,
+		  minlength: 2,
+		  maxlength: 20
+		},
+		surname: {
+		  required: true,
+		  minlength: 2,
+		  maxlength: 20
+		}
+	},
+	messages: {
+		name: {
+		  required: " Inserisci il nome",
+		  minlength: " Devi inserire almeno 2 caratteri",
+		  maxlength: " Non puoi inserire oltre 20 caratteri"
+		},
+		surname: {
+		  required: " Inserisci il cognome",
+		  minlength: " Devi inserire almeno 2 caratteri",
+		  maxlength: " Non puoi inserire oltre 20 caratteri"
+		}
+	},
+		submitHandler: function(form) {
+			form.submit();
+		}
+	});
 });

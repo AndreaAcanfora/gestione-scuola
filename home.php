@@ -9,6 +9,7 @@ if (!$_SESSION['nome'])
   <body id="bgHome">
       <a href="https://www.facebook.com/isisdavinci?fref=ts" id="fb-white"><i class="icon-facebook"></i></a>
       <button id="logout" onclick="goTo('index.php')">Logout</button><br><br>
+      <center id="nameUsr"><?php echo "{$_SESSION['nome']}<br>";?></center>
       <div id="container3">
         <center>
           <button onclick="goTo('insert.php')" id="insert">Inserimento Studente</button>

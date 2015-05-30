@@ -21,7 +21,7 @@ include 'head.php';
 				mysqli_query($con, "INSERT INTO `admin`(`user`, `password`, `nome`, `cognome`) 
 									VALUES ('{$_POST['id']}','{$pss}','{$_POST['name']}','{$_POST['surname']}')");
 				mysqli_close($con);
-				echo 'Utente ' . $_POST['name'] . ' ' . $_POST['surname'] . ' inserito con successo';
+				echo 'Admin ' . $_POST['name'] . ' ' . $_POST['surname'] . ' inserito con successo';
 			}else{
 				echo 'Le due password non coincidono !! <br>';
 				echo '<button onclick="goTo(\'insertAdmin.php\')">&xlarr;</button>';
