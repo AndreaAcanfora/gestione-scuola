@@ -118,4 +118,13 @@ $(document).ready(function() {
 			form.submit();
 		}
 	});
+	$('#fileToUpload').bind('change', function() {
+  		if (this.files[0].size > 8300000) {
+  			alert("Il file è troppo grande!");
+  			var control = $("#fileToUpload");
+  			control.replaceWith( control = control.clone( true ) );
+  			$("form").on("focus", "#fileToUpload", doStuff);
+  			return !(document.getElementById('fileToUpload').innerHTML=document.getElementById('fileToUpload').innerHTML);
+  		};
+	});
 });
