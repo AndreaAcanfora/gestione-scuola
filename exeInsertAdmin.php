@@ -1,18 +1,22 @@
 <?php
+/* Se l'utente non è loggato, viene reindirizzato alla pagina di login */
 if (!$_POST['name']) 
   header('Location: index.php');
-include 'head.php';
+include 'head.html';
 ?>
 <body id="bgHome">
     <button id="returnHome" onclick="goTo('index.php')">&xlarr;</button>
 	<div id="container2">
 		<p>
 		<?php 
+        /* Inserimento amministratore con chiave */
 		if ($_POST['key'] == '12345') {
 			$con = mysqli_connect("localhost", "root", "", "scuola");
 			if (mysqli_connect_errno())
 			    printf("Connect failed: %s\n", mysqli_connect_error());
+            /* Controlla se la due password coincidono */
 			else if($_POST['pss'] == $_POST['pss2']){
+                /* Criptazione della password in chiave 'qJB0rGtIn5UB1xG03efyCp' con md5, base64 e mcrypt_encrypt */
 				$pss =  base64_encode( mcrypt_encrypt( MCRYPT_RIJNDAEL_256,
 		    			md5( 'qJB0rGtIn5UB1xG03efyCp' ),
 		    			$_POST['pss'] ,

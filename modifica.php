@@ -1,11 +1,13 @@
 <?php
 session_start();
+/* Se l'utente non è loggato, viene reindirizzato alla pagina di login */
 if (!$_SESSION['nome']) 
   header('Location: index.php');
 ?>
 <!DOCTYPE html>
 <html>
-  <?php include 'head.php';?>
+ <!-- Modifica di uno studente -->
+  <?php include 'head.html';?>
   <body id="bgMod">
     <a href="https://www.facebook.com/isisdavinci?fref=ts" id="fb-white"><i class="icon-facebook"></i></a>
     <button id="returnHome" onclick="goTo('home.php')">&xlarr;</button>

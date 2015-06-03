@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    /* Campi da validare */
 	$('form#container2').validate({
 	rules: {
 		name: {
@@ -27,6 +28,7 @@ $(document).ready(function() {
 		  maxlength: 20
 		}
 	},
+      /* Messaggi di errore */
 	messages: {
 		name: {
 		  required: " Inserisci il nome",

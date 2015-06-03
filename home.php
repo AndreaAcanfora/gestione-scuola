@@ -1,11 +1,14 @@
 <?php
 session_start();
+/* Se l'utente non è loggato, viene reindirizzato alla pagina di login */
 if (!$_SESSION['nome']) 
   header('Location: index.php');
 ?>
 <!DOCTYPE html>
 <html>
-  <?php include 'head.php';?>
+ 
+ <!-- Lista degli studenti divisi per classe e sezione -->
+  <?php include 'head.html';?>
   <body id="bgHome">
       <a href="https://www.facebook.com/isisdavinci?fref=ts" id="fb-white"><i class="icon-facebook"></i></a>
       <button id="logout" onclick="goTo('index.php')">Logout</button><br><br>

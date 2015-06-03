@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <?php include 'head.php';?>
+ <!-- Form inserimento admin -->
+  <?php include 'head.html';?>
   <body id="bgHome">
     <button id="returnHome" onclick="goTo('index.php')">&xlarr;</button>
     <form  method="POST" action="exeInsertAdmin.php" id="container2" class="insA">

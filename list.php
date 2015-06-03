@@ -1,9 +1,11 @@
 <table>
 	<?php
+    /* Popola la lista degli studenti */
 	$con = mysqli_connect("localhost", "root", "", "scuola");
 	if (mysqli_connect_errno())
 	    printf("Connect failed: %s\n", mysqli_connect_error());
 	else{
+        /* Se la post di classe è settata */
 		if(!isset($_POST['class'])){
 			$class = 1;
 			$section = 'Informatica';
@@ -18,6 +20,7 @@
 		if(mysqli_fetch_assoc($res) == ''){
 			echo "<br>Non ci sono alunni in questa classe";
 		}else{
+            /* Riporta il puntatore al primo elemento di fetch_assoc */
 			mysqli_data_seek($res,0);
 			echo '<tr><td align="center">       Immagine  	</td>
 						<td align="center">     Nome 		</td>

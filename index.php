@@ -4,7 +4,8 @@ $_SESSION['nome'] = '';
 ?>
 <!DOCTYPE html>
 <html>
-  <?php include 'head.php';?>
+ <!-- Home della pagina -->
+  <?php include 'head.html';?>
   <body id="backgroundIndex">
     <form  method="POST" action="execute.php" class="login">
       <input type="text" name="name" id="indexLogin" placeholder="Username"></tr>

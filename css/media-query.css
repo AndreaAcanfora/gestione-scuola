@@ -1,3 +1,5 @@
+/* Le media-query servono ad adattare le pagine alle diverse dimensioni dei dispositivi */ 
+
 @media (min-width: 800px) {
   .containerImg{
     height: 300px;
