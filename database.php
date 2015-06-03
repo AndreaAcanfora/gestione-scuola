@@ -32,7 +32,7 @@ include 'function.php';
 						$img->uploadImg($con,$type);
 				}else{
 					mysqli_query($con, "INSERT INTO `studenti`(`Nome`, `Cognome`, `Classe`, `Sezione`, `image`) 
-                                        VALUES            ('{$_POST['name']}','{$_POST['surname']}','{$_POST['class']}','{$_POST['section']}',avatar.png')");
+                                        VALUES            ('{$_POST['name']}','{$_POST['surname']}','{$_POST['class']}','{$_POST['section']}','avatar.png')");
 					echo 'Utente ' . $_POST['name'] . ' ' . $_POST['surname'] . ' inserito con successo';
 				}
 				mysqli_close($con);

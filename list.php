@@ -36,7 +36,7 @@
 							$user['classe'] . '</td><td>' .
 							$user['sezione'] . "</td><td align='center'>
 							<button id='btnList' onclick=\"modifStud({$user['id_studente']},'{$user['nome']}','{$user['cognome']}','{$user['classe']}','{$user['sezione']}','{$user['image']}')\"> !! </button> </td><td align='center'>
-							<button id='btnList' onclick=\"deleteStud({$user['id_studente']})\"> X </button> </td></tr>";
+							<button id='btnList' onclick=\"deleteStud({$user['id_studente']},'{$user['image']}')\"> X </button> </td></tr>";
 			};
 		}	
 		mysqli_free_result($res);

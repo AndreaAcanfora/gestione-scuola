@@ -43,7 +43,7 @@
   .login #fb{
     display: none !important;
   }
-  #backgroundIndex div#containerText{ 
+  #backgroundIndex #containerText{ 
     top: 100px !important;
     width: 100% !important;
     border-radius: 0px !important;

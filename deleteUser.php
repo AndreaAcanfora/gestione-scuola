@@ -1,12 +1,9 @@
 <?php
 /* Questa funzione elimina uno studente dal database e la sua relativa foto dal server*/
-
-if (!unlink($_GET['image']))
-{
-  echo ("Si è verificato un errore");
-}
-else
-{
+try{
+  if($_GET['img'] != 'avatar.png')
+    unlink('img/'.$_GET['img']);
+  
   $con = mysqli_connect("localhost", "root", "", "scuola");
   if (mysqli_connect_errno())
     printf("Connect failed: %s\n", mysqli_connect_error());
@@ -16,6 +13,7 @@ else
   }
   mysqli_close($con);
   header('Location: home.php');  
+}catch(Exception $e){
+  echo "Si e' verificato un errore!!!";
 }
-
 ?>

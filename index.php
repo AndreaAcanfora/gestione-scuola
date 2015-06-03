@@ -13,7 +13,7 @@ $_SESSION['nome'] = '';
       <button id="bntLogin" type="submit" >LOGIN</a></button>
       <a href="https://www.facebook.com/isisdavinci?fref=ts" id="fb"><i class="icon-facebook"></i></a>
     </form>
-    <div id="containerText">
+    <marquee behavior="scroll" direction="up" scrollamount="2" onmouseover="this.stop()" onmouseout="this.start()" id="containerText">
     <p>
       Benvenuto nella sezione amministrativa
       dell'ISIS Leonardo Da Vinci
@@ -21,8 +21,10 @@ $_SESSION['nome'] = '';
       gli alunni della scuola;
       accedi all'area riservata.
     </p>
-    </div>
+    </marquee>
     <a href="chiSiamo.html" id="chiSiamo">Chi siamo? </a>
+    <a href="doveSiamo.html" id="doveSiamo">Dove siamo? </a>
+    <div id="counter">Accessi: <?php include 'counter.php';?></div>
   </body>
 </html>
 

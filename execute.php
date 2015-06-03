@@ -20,7 +20,8 @@ if(!is_null($user)){
 }
 include 'head.html';
 ?>
-<body>
+<body id="backgroundIndex">
+  <button id="returnHome" onclick="goTo('index.php')">&xlarr;</button>
   <div id="container2">  
     <center>
       <div id="result">Password errata</div>
